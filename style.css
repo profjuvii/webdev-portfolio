@@ -27,6 +27,7 @@ body {
 
 /* Header */
 .header {
+    position: fixed;
     top: 0;
     left: 0;
     width: 100%;
@@ -35,6 +36,11 @@ body {
     justify-content: space-between;
     align-items: center;
     z-index: 100;
+    transition: background 0.2s ease;
+}
+
+.header.scrolled {
+    background: #232023;
 }
 
 .logo {
@@ -72,20 +78,16 @@ body {
     background-color: transparent;
     border: none;
     border-radius: 5px;
-    font-size: 38px;
+    font-size: 28px;
     color: #fff;
     transition: transform 0.3s ease;
-}
-
-.button:hover {
-    transform: rotate(-90deg);
 }
 
 /* Main */
 .main {
     width: 100%;
-    min-height: calc(100% - 87.5px - 51.5px);
-    padding: calc(120px - 87.5px) 100px calc(120px - 51.5px) 100px;
+    min-height: calc(100% - 51.5px);
+    padding: 120px 100px calc(120px - 51.5px) 100px;
     display: flex;
 }
 
@@ -166,6 +168,7 @@ body {
 }
 
 @media (max-width: 768px) {
+    /* Header */
     .header {
         padding: 10px 20px;
     }
@@ -174,21 +177,57 @@ body {
         font-size: 28px;
     }
 
-    .navbar a, .navbar a::before, .navbar a:hover::before {
-        all: unset;
+    .navbar {
+        display: flex;
+        flex-direction: column;
+        position: absolute;
+        width: 100%;
+        left: 0;
+        top: 62.5px;
+        padding-bottom: 6px 0;
+        align-items: center;
+        background: #232023;
+        opacity: 0;
+        visibility: hidden;
+        transition: opacity 0.2s ease, visibility 0.2s ease;
     }
 
-    .navbar {
+    .navbar::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 20px;
+        width: calc(100% - 40px);
+        height: 1px;
+        background-color: #fff;
+    }
+
+    .navbar > a {
+        margin: 0;
+        padding: 6px 0;
+    }
+
+    .navbar > a:hover {
+        text-decoration: underline;
+    }
+
+    .navbar a::before {
         display: none;
+    }
+
+    .navbar.active {
+        opacity: 1;
+        visibility: visible;
     }
 
     .button {
         display: block;
     }
 
+    /* Main */
     .main {
-        min-height: calc(100% - 77.5px - 39.5px);
-        padding: calc(120px - 77.5px) 20px calc(120px - 39.5px) 20px;
+        min-height: calc(100% - 39.5px);
+        padding: calc(120px) 20px calc(120px - 39.5px) 20px;
     }
 
     .about-content {
@@ -201,6 +240,11 @@ body {
         grid-row: 3;
     }
 
+    .about-item3 img:hover {
+        transform: scale(1);
+    }
+
+    /* Footer */
     .footer {
         padding: 10px 20px;
         text-align: center;

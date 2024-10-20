@@ -1,5 +1,27 @@
+const header = document.querySelector('.header');
+const navbar = document.querySelector('.navbar');
+const button = document.querySelector('.button');
 const navLinks = document.querySelectorAll('.nav-link');
 const sections = document.querySelectorAll('main section');
+
+window.addEventListener('scroll', () => {
+    if (!navbar.classList.contains('active')) {
+        (window.scrollY > 0) ? header.classList.add('scrolled')
+            : header.classList.remove('scrolled');
+    }
+});
+
+button.addEventListener('click', () => {
+    if (!navbar.classList.contains('active')) {
+        navbar.classList.add('active');
+        if (!header.classList.contains('scrolled'))
+            header.classList.add('scrolled');
+    } else {
+        navbar.classList.remove('active');
+        if (window.scrollY == 0)
+            header.classList.remove('scrolled');
+    }
+});
 
 sections.forEach((section, index) => {
     if (index !== 0) {
@@ -18,5 +40,9 @@ navLinks.forEach(link => {
 
         const activeSection = document.querySelector(sectionId);
         activeSection.classList.remove('hidden');
+
+        navbar.classList.remove('active');
+        if (window.scrollY == 0)
+            header.classList.remove('scrolled');
     });
 });
