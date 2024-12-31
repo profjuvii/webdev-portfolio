@@ -36,7 +36,6 @@ header {
 .logo {
     font-size: 32px;
     font-weight: 700;
-    text-decoration: none;
     color: #fff;
 }
 
@@ -112,6 +111,15 @@ main ul {
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.2);
 }
 
+.card.black {
+    background-color: #1b1b1f;
+    color: #fff;
+}
+
+.card.hidden {
+    display: none;
+}
+
 /* About section */
 #about {
     gap: 40px;
@@ -119,7 +127,25 @@ main ul {
 
 /* Experience section */
 #experience {
+    justify-content: flex-start;
     gap: 20px;
+}
+
+#search-bar {
+    width: 100%;
+    padding: 12px 30px;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    border: none;
+    border-radius: 48px;
+    background-color: #fff;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.2);
+    font-size: 15px;
+}
+
+#search-bar:focus {
+    outline: none;
 }
 
 .experience-tags {
