@@ -8,10 +8,10 @@ The website is structured to provide an intuitive and user-friendly experience:
 - **Desktop Version**: A fixed navigation panel at the top of the page.  
 - **Mobile Version**: A responsive dropdown menu for easy access.  
 - The website includes the following sections:
-    1. **Home**: The main page introducing the portfolio.  
-    2. **About**: Information about me and my professional background.  
-    3. **Experience**: A collection of project cards with brief descriptions.  
-    4. **Contact**: Details to connect with me directly.
+    - **Home**: The main page introducing the portfolio.  
+    - **About**: Information about me and my professional background.  
+    - **Experience**: A collection of project cards with brief descriptions.  
+    - **Contact**: Details to connect with me directly.
 
 ## Future Plans
 
