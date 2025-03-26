@@ -5,8 +5,14 @@
     box-sizing: border-box;
 }
 
+html {
+    background-color: #1b1b1f;
+}
+
 html, body {
     height: 100%;
+    overflow: auto;
+    background-color: #fff;
 }
 
 h1 {
@@ -180,8 +186,12 @@ main ul {
     color: #000;
 }
 
-.web-icons a:hover {
-    text-decoration: none;
+.web-icons i {
+    transition: 0.3s ease transform;
+}
+
+.web-icons i:active {
+    transform: scale(0.85);
 }
 
 /* Footer */
